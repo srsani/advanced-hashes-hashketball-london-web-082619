@@ -90,6 +90,22 @@ def player_stats (name)
   end
 end
 
+def winning_team
+  home = 0
+  away = 0 
+  for i in game_hash[:home][:players]
+    home += i[:points]
+  end
+  for i in game_hash[:away][:players]
+    away += i[:points]
+  end
+  if home >away
+    return 'Brooklyn Nets'
+  else
+    return 'Charlotte Hornets'
+  end
+end
+
 
 def big_shoe_rebounds
   shoe_size = 0
